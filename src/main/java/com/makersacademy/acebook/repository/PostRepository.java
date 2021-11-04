@@ -13,5 +13,6 @@ public interface PostRepository extends CrudRepository<Post, Long> {
 
     @Query("FROM Post ORDER BY created_at DESC")
     List<Post> findAllOrderByDateDesc();
+    
 
 }
