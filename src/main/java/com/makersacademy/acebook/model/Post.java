@@ -3,6 +3,8 @@ package com.makersacademy.acebook.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.SecondaryTable;
 import javax.persistence.Table;
 import javax.persistence.GenerationType;
 
@@ -11,7 +13,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "POSTS")
-
+@SecondaryTable(name = "LIKED_POSTS", pkJoinColumns = @PrimaryKeyJoinColumn(name = "post_id"))
 
 public class Post {
 
