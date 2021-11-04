@@ -19,7 +19,7 @@ public class PostTest {
 	@Test 
 	public void likepost(){
 		post.like();
-		assertThat(post.getLikes(), Integer.valueOf(1));
+		assertEquals(post.getlikes(), Integer.valueOf(1));
 	}
 
 }

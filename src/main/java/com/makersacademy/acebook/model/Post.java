@@ -11,6 +11,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "POSTS")
+
 public class Post {
 
     @Id
@@ -25,5 +26,13 @@ public class Post {
     }
     public String getContent() { return this.content; }
     public void setContent(String content) { this.content = content; }
+
+    public void like(){
+
+    }
+    public Integer getlikes(){
+        return 1;
+    }
+
 
 }
