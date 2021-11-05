@@ -32,6 +32,9 @@ public class Post {
         this.username = username;
 
     }
+    public Long getID(){
+        return this.id;
+    }
 
     public String getContent() {
         return this.content;
@@ -51,4 +54,8 @@ public class Post {
     public void setUser(String username){
         this.username = username;
     }
+    public void like(String username, long postid){
+
+    }
+    
 }

@@ -37,9 +37,10 @@ public class User {
         this.enabled = TRUE;
     }
 
-    public User(String username, String password) {
+    public User(String username, String password, Long id) {
         this.username = username;
         this.password = password;
+        this.id = id;
         this.enabled = TRUE;
     }
 

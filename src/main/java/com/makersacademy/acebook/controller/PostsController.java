@@ -1,5 +1,6 @@
 package com.makersacademy.acebook.controller;
 
+import com.makersacademy.acebook.model.Authority;
 import com.makersacademy.acebook.model.Post;
 import com.makersacademy.acebook.model.User;
 import com.makersacademy.acebook.repository.PostRepository;
@@ -33,6 +34,8 @@ public class PostsController {
     public RedirectView create(@ModelAttribute Post post) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
+
+        post.like(username,post.getID());
         post.setUser(username);
         postService.save(post);
         return new RedirectView("/posts");
