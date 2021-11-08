@@ -28,11 +28,7 @@ public class LikeController {
   }
 
 
-    // @PostMapping("/like")
-    // public RedirectView create(@ModelAttribute Like Like) {
-        
-    //     return new RedirectView("/posts");
-    // }
+    
 
   
 
