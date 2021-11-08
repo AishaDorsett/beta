@@ -44,7 +44,7 @@
         <span th:text="${post.likes}"></span> likes</br> 
         <!--outputs post.likes (integer). See line 44 in Post.java   -->
         
-        <form class="like" action="#" th:action="@{/posts}" th:object="${post}" method="post">
+        <form class="Like" action="#" th:action="@{/posts}" th:object="${post}" method="post">
             <p><input class="comment-text" type="text" /></p>
             <p><input class="comment-button" type="submit" value="Like" id="submit" />
         </form>
