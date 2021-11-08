@@ -15,15 +15,21 @@ import java.util.Set;
 @Table(name = "LIKED_POSTS")
 @Entity
 public class Like{
+  @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+  
 
-  private long postid;
-  private long userid;
-  private String username;
+
+  private long post_id;
+  private long user_id;
+  //private String username;
 
   public Like(long userid,long postid) {
-    this.userid = userid;
-    this.postid = postid;
+    this.user_id = userid;
+    this.post_id = postid;
   }
+  
 
   
 

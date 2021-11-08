@@ -51,4 +51,8 @@ public class Post {
     public void setUser(String username){
         this.username = username;
     }
+
+    public long getId(){
+        return this.id;
+    }
 }
