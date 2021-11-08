@@ -52,7 +52,7 @@ public class Post {
         this.username = username;
     }
 
-    public long getId(){
+    public long getID(){
         return this.id;
     }
 }
