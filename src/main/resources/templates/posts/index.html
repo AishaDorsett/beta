@@ -43,11 +43,15 @@
         <p th:text="${post.content}"></p>
         <span th:text="${post.likes}"></span> likes</br> 
         <!--outputs post.likes (integer). See line 44 in Post.java   -->
-        <form class="comment" action="#" th:action="@{/posts}" th:object="${post}" method="post">
+        
+        <form class="like" action="#" th:action="@{/posts}" th:object="${post}" method="post">
             <p><input class="comment-text" type="text" /></p>
-            <p><input class="comment-button" type="submit" value="Like" id="submit" /><input class="comment-button"
-                    type="submit" value="Comment" id="submit" /></p>
+            <p><input class="comment-button" type="submit" value="Like" id="submit" />
         </form>
+        <form class="comment" action="#" th:action="@{/posts}" th:object="${post}" method="post">
+        <input class="comment-button" type="submit" value="Comment" id="submit" /></p>
+        </form>
+    
     </ul>
 </body>
 </html>
