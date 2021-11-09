@@ -29,6 +29,11 @@ public class Like{
     this.user_id = userid;
     this.post_id = postid;
   }
+
+  public void addLike(long userid, long postid){
+    this.user_id = userid;
+    this.post_id = postid;
+  }
   
 
   
