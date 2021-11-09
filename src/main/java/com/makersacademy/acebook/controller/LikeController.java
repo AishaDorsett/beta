@@ -24,6 +24,7 @@ public class LikeController {
 
   @PostMapping("/posts/{id}/likes")
     public RedirectView like(@PathVariable("id") Long id) {System.out.println("******* Liking a post");
+    
     return new RedirectView("/posts");
   }
 
