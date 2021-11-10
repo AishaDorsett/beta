@@ -33,15 +33,18 @@ public class SignInTest {
         driver.findElement(By.id("username")).sendKeys(name);
         driver.findElement(By.id("password")).sendKeys("password");
         driver.findElement(By.id("submit")).click();
-        }
+    }
 
     @After
     public void tearDown() {
         driver.close();
     }
 
+
+
     @Test
     public void successfulSignInRedirectsToPosts() {
+        //Test 2
         // directs to login page after sign up
         driver.findElement(By.id("username")).sendKeys(name);
         driver.findElement(By.id("password")).sendKeys("password");
@@ -50,4 +53,15 @@ public class SignInTest {
         String title = driver.getTitle();
         Assert.assertEquals("Beta", title);
     }
+
+    @Test
+    public void invalidSigninShowsError(){
+        driver.findElement(By.id("username")).sendKeys("LLL");
+        driver.findElement(By.id("password")).sendKeys("password");
+        driver.findElement(By.cssSelector("input[value='Log in']")).click();
+        String text = driver.findElement(By.className("error")).getText();
+        Assert.assertEquals("Wrong user or password", text);
+    }
+
+    
 }

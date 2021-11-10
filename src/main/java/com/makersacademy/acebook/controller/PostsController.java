@@ -1,11 +1,8 @@
 package com.makersacademy.acebook.controller;
 
 import com.makersacademy.acebook.model.Post;
-import com.makersacademy.acebook.model.User;
-import com.makersacademy.acebook.repository.PostRepository;
 import com.makersacademy.acebook.service.IPostService;
 
-// import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,10 +28,14 @@ public class PostsController {
 
     @PostMapping("/posts")
     public RedirectView create(@ModelAttribute Post post) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String username = auth.getName();
-        post.setUser(username);
-        postService.save(post);
+        System.out.println(post.getContent());
+        if (post.getContent() != ""){
+            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+            String username = auth.getName();
+            post.setUser(username);
+            postService.save(post);
+        }
+
         return new RedirectView("/posts");
     }
 
