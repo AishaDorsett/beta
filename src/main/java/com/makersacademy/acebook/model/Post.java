@@ -20,7 +20,7 @@ public class Post {
     private Long id;
     private String content;
     private String username;
-  
+  public
     @ManyToMany(mappedBy = "likedPosts") //links to bridge table
     Set<User> likes; // Creates a 'Set' of 'Users' called likes. 
     //Each user associated with a post represents 1 like
