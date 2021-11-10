@@ -30,7 +30,9 @@ public class Like{
     this.post_id = postid;
   }
   
-
+  public void likepost(){
+    
+  }
   
 
 
