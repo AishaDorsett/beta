@@ -63,4 +63,11 @@ public class LikesTest {
   Assert.assertEquals(1,driver.findElement(By.cssSelector("")).getText());
  }
 
+ @Test 
+ public void usercantliketwice(){
+  driver.findElement(By.cssSelector("input[type='submit'][value='Like']")).click();
+  driver.findElement(By.cssSelector("input[type='submit'][value='Like']")).click();
+  Assert.assertEquals(1,driver.findElement(By.cssSelector("")).getText());
+ }
+
  }
