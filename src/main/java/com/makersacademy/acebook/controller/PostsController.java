@@ -33,7 +33,7 @@ public class PostsController {
         model.addAttribute("posts", posts);
         model.addAttribute("post", new Post());
         model.addAttribute("user", user);
-        return "posts/index.html";
+        return "posts/index";
     }
 
     @PostMapping("/posts")
