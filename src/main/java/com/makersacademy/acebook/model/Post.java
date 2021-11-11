@@ -62,8 +62,8 @@ public class Post {
         this.content = content;
     }
 
-    public Integer getLikesCount() {
-        return this.likes.size();
+    public String getLikesCount() {
+        return String.valueOf(this.likes.size());
     }
     // returns number of users in set. I.e number of likes.
 
