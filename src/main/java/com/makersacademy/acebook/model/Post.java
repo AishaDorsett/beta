@@ -38,7 +38,7 @@ public class Post {
     public @ManyToMany(mappedBy = "likedPosts") // links to bridge table
     Set<User> likes; // Creates a 'Set' of 'Users' called likes.
     // Each user associated with a post represents 1 like
-
+public
     @OneToMany(mappedBy = "post")
     List<Comment> comments;
 
