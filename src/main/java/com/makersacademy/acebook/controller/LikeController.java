@@ -4,7 +4,7 @@ import java.security.Principal;
 
 import com.makersacademy.acebook.model.Like;
 import com.makersacademy.acebook.model.User;
-import com.makersacademy.acebook.repository.LikeRepository;
+import com.makersacademy.acebook.service.ILikeService;
 import com.makersacademy.acebook.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import org.springframework.web.servlet.view.RedirectView;
 @Controller
 public class LikeController {
     @Autowired
-    LikeRepository likeRepository;
+    ILikeService likeService;
 
     @Autowired
     UserRepository userRepository;
@@ -32,7 +32,7 @@ public class LikeController {
         System.out.println("******* Liking a post");
         User user = userRepository.findByUsername(principal.getName());
         Like like = new Like(user.getId(), id);
-        likeRepository.save(like);
+        likeService.save(like);
         return new RedirectView("/posts");
     }
 
